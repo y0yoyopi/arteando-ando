@@ -11,7 +11,7 @@ function App() {
       currentAudio.currentTime = 0;
     }
 
-    const audio = new Audio(`${process.env.PUBLIC_URL}/audios/testimonio${id}.mp3`);
+    const audio = new Audio(`${process.env.PUBLIC_URL}/audio/testimonio${id}.mp3`);
     audio.play();
     setCurrentAudio(audio);
     setStatus(` Reproduciendo testimonio ${id}...`);
@@ -41,15 +41,15 @@ function App() {
 
 const styles = {
   container: {
-    backgroundColor: "#111",
-    color: "#fff",
+    backgroundColor: "#ffffff",
+    color: "#111111",
     minHeight: "100vh",
     textAlign: "center",
     paddingTop: "5rem",
     fontFamily: "Poppins, sans-serif",
   },
   title: {
-    color: "#f4d03f",
+    color: "#FF69B4",
     fontSize: "2.2rem",
     marginBottom: "1.5rem",
   },
@@ -57,7 +57,7 @@ const styles = {
     marginTop: "1rem",
   },
   button: {
-    background: "#f4d03f",
+    background: "#FF69B4",
     border: "none",
     borderRadius: "12px",
     color: "#000",
@@ -70,7 +70,7 @@ const styles = {
   status: {
     marginTop: "2rem",
     fontSize: "1.2rem",
-    color: "#bbb",
+    color: "#888888",
   },
 };
 
