@@ -1,11 +1,25 @@
 import React, { useState } from "react";
 import "./App.css";
 
+// ¡CAMBIAR POR LA IP DE TU ESP32!
+const ESP32_IP = "192.168.1.100"; 
+
 function App() {
-  const [status, setStatus] = useState(""); // Cambiar a string vacío
+  const [status, setStatus] = useState("");
   const [currentAudio, setCurrentAudio] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentPlayingId, setCurrentPlayingId] = useState(null);
+
+  // Función para controlar LEDs
+  const controlarLEDs = async (comando) => {
+    try {
+      const response = await fetch(`http://${ESP32_IP}/${comando}`);
+      const result = await response.text();
+      console.log(`LEDs: ${result}`);
+    } catch (error) {
+      console.error("Error controlando LEDs:", error);
+    }
+  };
 
   const playAudio = (id) => {
     if (currentAudio) {
@@ -18,9 +32,19 @@ function App() {
     setCurrentAudio(audio);
     setCurrentPlayingId(id);
     setIsPlaying(true);
-    setStatus(""); // Limpiar el estado
+    setStatus("");
+
+    // Controlar LEDs según el botón presionado
+    if (id === 1) {
+      controlarLEDs("encender/pares");
+    } else if (id === 2) {
+      controlarLEDs("encender/impares");
+    }
+    // Los botones 3 y 4 no encienden LEDs
 
     audio.onended = () => {
+      // Apagar LEDs cuando termine el audio
+      controlarLEDs("apagar");
       stopAudio();
     };
   };
@@ -33,7 +57,10 @@ function App() {
     }
     setIsPlaying(false);
     setCurrentPlayingId(null);
-    setStatus(""); // Limpiar el estado
+    setStatus("");
+    
+    // Apagar LEDs al detener manualmente
+    controlarLEDs("apagar");
   };
 
   return (
@@ -64,9 +91,6 @@ function App() {
           </div>
         </div>
       )}
-
-      {/* Eliminar o comentar esta línea */}
-      {/* <div className="status">{status}</div> */}
     </div>
   );
 }
