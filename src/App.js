@@ -12,14 +12,21 @@ function App() {
 
   // Función para controlar LEDs
   const controlarLEDs = async (comando) => {
-    try {
-      const response = await fetch(`http://${ESP32_IP}/${comando}`);
-      const result = await response.text();
-      console.log(`LEDs: ${result}`);
-    } catch (error) {
-      console.error("Error controlando LEDs:", error);
-    }
-  };
+  try {
+    // Intentar con CORS primero
+    const response = await fetch(`http://${ESP32_IP}/${comando}`);
+    const result = await response.text();
+    console.log(`✅ LEDs: ${result}`);
+  } catch (error) {
+    console.log('🔄 Falló CORS, intentando con no-cors...');
+    
+    // Fallback: no-cors (no espera respuesta)
+    await fetch(`http://${ESP32_IP}/${comando}`, { 
+      mode: 'no-cors' 
+    });
+    console.log(`✅ Comando ${comando} enviado (modo no-cors)`);
+  }
+};
 
   const playAudio = (id) => {
     if (currentAudio) {
