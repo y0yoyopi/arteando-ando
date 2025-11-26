@@ -288,3 +288,143 @@
     height: 32px;
   }
 }
+
+.status-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 0, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 1000;
+  font-weight: bold;
+}
+
+.connection-status {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.connection-test {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  backdrop-filter: blur(5px);
+}
+
+.connection-test:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.audio-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: rgba(000, 000, 000, 0.1) !important;
+}
+
+.button-subtext {
+  display: block;
+  font-size: 10px;
+  margin-top: 4px;
+  opacity: 0.8;
+  color: white;
+}
+
+.process-info {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-top: 5px;
+  font-style: italic;
+  color: #333;
+}
+
+/* Mejoras visuales para los estados activos */
+.audio-button.active {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+/* Ajustes para el overlay de controles de audio */
+.audio-controls-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.audio-controls {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.playing-status {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.stop-button {
+  background: #999999;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.3s ease;
+}
+
+.stop-button:hover {
+  background: #333333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .connection-status {
+    position: static;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .status-message {
+    top: 10px;
+    font-size: 14px;
+  }
+
+  .audio-controls {
+    padding: 20px;
+    margin: 15px;
+  }
+
+  .playing-status {
+    font-size: 16px;
+  }
+
+  .stop-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
