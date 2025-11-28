@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import "./App.css";
 
 // ¡CAMBIAR POR LA IP DE TU ESP32!
-const ESP32_IP = "192.168.18.38"; 
+const ESP32_IP = "10.142.69.251"; 
 
 function App() {
   const [status, setStatus] = useState("");
