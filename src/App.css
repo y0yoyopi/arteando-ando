@@ -5,11 +5,11 @@
 }
 
 .app-container {
-  background-image: url('../public/fondo/fondo.jpg'); /* Cambia por la ruta de tu imagen */
-  background-size: cover; /* Cubre toda el área sin distorsionar */
-  background-position: center center; /* Centra la imagen */
-  background-attachment: fixed; /* Fija la imagen para que no se mueva al scroll */
-  background-repeat: no-repeat; /* No repetir la imagen */
+  background-image: url('../public/fondo/fondo.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   color: #111111;
   min-height: 100vh;
   display: flex;
@@ -25,23 +25,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3); /* Ajusta la opacidad según necesites */
+  background: rgba(0, 0, 0, 0.3);
   z-index: 0;
-}
-
-.app-title {
-  color: #ffffff;
-  font-size: 2.5rem;
-  text-align: center;
-  padding: 1.5rem 0;
-  background-color: #ffffff;
-  z-index: 10;
-}
-
-.app-subtitle {
-  text-align: center;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
 }
 
 .buttons-grid {
@@ -57,7 +42,7 @@
 }
 
 .audio-button {
-  background: rgba(000, 000, 000, 0.1); /* */
+  background: rgba(000, 000, 000, 0.1);
   border: none;
   color: #000;
   cursor: pointer;
@@ -68,12 +53,12 @@
   position: relative;
   padding: 0;
   margin: 0;
-  backdrop-filter: blur(5px); /* Efecto glass */
-  border: 2px solid rgba(255, 255, 255, 0.3); /* Borde sutil */
+  backdrop-filter: blur(5px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .audio-button:hover {
-  background: rgba(000, 000, 000, 0.4); /* Más opaco al hover */
+  background: rgba(000, 000, 000, 0.4);
   transform: scale(0.98);
 }
 
@@ -87,7 +72,7 @@
 }
 
 .audio-button.active {
-  background: rgba(000, 000, 000, 0); /* Color más intenso cuando está activo */
+  background: rgba(000, 000, 000, 0);
   box-shadow: 0 0 30px rgba(000, 000, 000, 0.4);
   border: 2px solid rgba(255, 255, 255, 0.6);
 }
@@ -96,7 +81,7 @@
   font-size: 1.8rem;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  color: white; /* Texto blanco para mejor contraste */
+  color: white;
 }
 
 .audio-controls-overlay {
@@ -110,121 +95,6 @@
   justify-content: center;
   z-index: 100;
   background: rgba(0, 0, 0, 0.7);
-}
-
-.status {
-  text-align: center;
-  padding: 1.5rem;
-  font-size: 1.2rem;
-  color: #888888;
-  background-color: #ffffff;
-}
-
-/* Estilos responsivos para tablets */
-@media (max-width: 1024px) {
-  .app-title {
-    font-size: 2.2rem;
-    padding: 1rem 0;
-  }
-  
-  .button-text {
-    font-size: 1.6rem;
-  }
-}
-
-/* Estilos responsivos para móviles */
-@media (max-width: 768px) {
-  .buttons-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    height: calc(100vh - 180px);
-  }
-  
-  .app-title {
-    font-size: 2rem;
-    padding: 0.8rem 0;
-  }
-  
-  .app-subtitle {
-    font-size: 1.1rem;
-    margin-bottom: 0.8rem;
-  }
-  
-  .button-text {
-    font-size: 1.4rem;
-  }
-  
-  .status {
-    padding: 1rem;
-    font-size: 1.1rem;
-  }
-}
-
-/* Estilos para pantallas muy pequeñas */
-@media (max-width: 480px) {
-  .app-title {
-    font-size: 1.8rem;
-  }
-  
-  .button-text {
-    font-size: 1.2rem;
-  }
-  
-  .status {
-    font-size: 1rem;
-    padding: 0.8rem;
-  }
-}
-
-/* Estilos para orientación landscape en móviles */
-@media (max-height: 500px) and (orientation: landscape) {
-  .buttons-grid {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
-    height: calc(100vh - 120px);
-  }
-  
-  .app-title {
-    padding: 0.5rem 0;
-    font-size: 1.8rem;
-  }
-  
-  .app-subtitle {
-    margin-bottom: 0.5rem;
-  }
-  
-  .status {
-    padding: 0.5rem;
-  }
-}
-
-/* Agregar estas clases al CSS existente */
-
-.app-container.playing {
-  background-color: rgba(0, 0, 0, 0.7);
-  transition: background-color 0.3s ease;
-}
-
-.audio-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.audio-button.active {
-  background: rgba(000, 000, 000, 0.4);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-}
-
-.audio-controls-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
 }
 
 .audio-controls {
@@ -267,8 +137,24 @@
   flex-shrink: 0;
 }
 
-/* Responsive para los controles de audio */
+/* Responsive */
+@media (max-width: 1024px) {
+  .button-text {
+    font-size: 1.6rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .buttons-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    height: calc(100vh - 180px);
+  }
+  
+  .button-text {
+    font-size: 1.4rem;
+  }
+  
   .audio-controls {
     padding: 1.5rem;
     margin: 1rem;
@@ -282,46 +168,26 @@
     padding: 0.8rem 1.5rem;
     font-size: 1.1rem;
   }
-  
-  .stop-button svg {
-    width: 32px;
-    height: 32px;
+}
+
+@media (max-width: 480px) {
+  .button-text {
+    font-size: 1.2rem;
   }
 }
 
-.status-message {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(255, 0, 0, 0.8);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  z-index: 1000;
-  font-weight: bold;
+@media (max-height: 500px) and (orientation: landscape) {
+  .buttons-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    height: calc(100vh - 120px);
+  }
 }
 
-.connection-status {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 10;
-}
-
-.connection-test {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  padding: 8px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 12px;
-  backdrop-filter: blur(5px);
-}
-
-.connection-test:hover {
-  background: rgba(255, 255, 255, 0.3);
+/* Estados específicos */
+.app-container.playing {
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: background-color 0.3s ease;
 }
 
 .audio-button.disabled {
@@ -344,87 +210,4 @@
   margin-top: 5px;
   font-style: italic;
   color: #333;
-}
-
-/* Mejoras visuales para los estados activos */
-.audio-button.active {
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-  transform: scale(1.05);
-  transition: all 0.3s ease;
-}
-
-/* Ajustes para el overlay de controles de audio */
-.audio-controls-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
-}
-
-.audio-controls {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 30px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-}
-
-.playing-status {
-  font-size: 18px;
-  margin-bottom: 20px;
-  color: #333;
-  font-weight: bold;
-}
-
-.stop-button {
-  background: #999999;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: background 0.3s ease;
-}
-
-.stop-button:hover {
-  background: #333333;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .connection-status {
-    position: static;
-    text-align: center;
-    margin-bottom: 15px;
-  }
-  
-  .status-message {
-    top: 10px;
-    font-size: 14px;
-  }
-
-  .audio-controls {
-    padding: 20px;
-    margin: 15px;
-  }
-
-  .playing-status {
-    font-size: 16px;
-  }
-
-  .stop-button {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
 }
