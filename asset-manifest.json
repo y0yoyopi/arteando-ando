@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/arteando-ando/static/css/main.938a542f.css",
-    "main.js": "/arteando-ando/static/js/main.a84ee45d.js",
+    "main.js": "/arteando-ando/static/js/main.9c5d0a20.js",
     "static/js/453.2e37f1da.chunk.js": "/arteando-ando/static/js/453.2e37f1da.chunk.js",
     "static/media/fondo.jpg": "/arteando-ando/static/media/fondo.b2373f1adffc12e603ec.jpg",
     "index.html": "/arteando-ando/index.html",
     "main.938a542f.css.map": "/arteando-ando/static/css/main.938a542f.css.map",
-    "main.a84ee45d.js.map": "/arteando-ando/static/js/main.a84ee45d.js.map",
+    "main.9c5d0a20.js.map": "/arteando-ando/static/js/main.9c5d0a20.js.map",
     "453.2e37f1da.chunk.js.map": "/arteando-ando/static/js/453.2e37f1da.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.938a542f.css",
-    "static/js/main.a84ee45d.js"
+    "static/js/main.9c5d0a20.js"
   ]
 }
