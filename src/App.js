@@ -3,6 +3,14 @@ import "./App.css";
 
 const ESP32_IP = "10.142.69.251"; 
 
+// Mapeo de botones a localidades
+const LOCALIDADES = {
+  1: "Lucanamarca",
+  2: "Soras", 
+  3: "Ccano",
+  4: "Aranhuay"
+};
+
 function App() {
   const [currentAudio, setCurrentAudio] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -14,7 +22,7 @@ function App() {
     try {
       await fetch(`http://${ESP32_IP}/${comando}`);
     } catch (error) {
-      // Silenciar errores en producción
+      // Silenciar errores
     }
   };
 
@@ -49,7 +57,7 @@ function App() {
       // ESPERAR 10 SEGUNDOS (GPIO19) y luego ocultar todo
       setTimeout(() => {
         stopAudio();
-      }, 10000); // 10 segundos para la secuencia GPIO19
+      }, 10000);
     };
 
     audio.onerror = () => {
@@ -86,7 +94,7 @@ function App() {
             onClick={() => !isProcessActive && playAudio(id)}
             disabled={isProcessActive}
           >
-            <span className="button-text">{id}</span>
+            <span className="button-text">{LOCALIDADES[id]}</span>
             <span className="button-subtext">
               {isProcessActive && currentPlayingId === id ? "Ejecutando..." : ""}
             </span>
@@ -98,7 +106,7 @@ function App() {
         <div className="audio-controls-overlay">
           <div className="audio-controls">
             <div className="playing-status">
-              {currentPlayingId ? `Reproduciendo audio ${currentPlayingId}` : "Proceso activo"}
+              Reproduciendo: {LOCALIDADES[currentPlayingId]}
               <div className="process-info">
                 {isProcessActive && "Secuencia de LEDs en progreso..."}
               </div>
